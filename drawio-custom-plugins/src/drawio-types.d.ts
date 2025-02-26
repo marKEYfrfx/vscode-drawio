@@ -56,6 +56,8 @@ declare interface DrawioEditor {
 }
 
 declare interface DrawioGraph {
+  refresh(): unknown;
+  autoSizeCell(root: any, arg1: boolean): unknown;
 	defaultThemeName: string;
 	insertVertex(arg0: undefined, arg1: null, label: string, arg3: number, arg4: number, arg5: number, arg6: number, arg7: string): void;
 	addListener: any;
@@ -86,11 +88,14 @@ declare interface DrawioGraphSelectionModel {
 }
 
 declare interface DrawioCell {
+    children: any;
+    value: any;
     id: string;
-    style: string
+    style: string;
 }
 
 declare interface DrawioGraphModel {
+    getCell(arg0: number): DrawioCell;
     setValue(c: DrawioCell, label: string | any): void;
     beginUpdate(): void;
     endUpdate(): void;
