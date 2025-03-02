@@ -95,6 +95,7 @@ declare interface DrawioCell {
 }
 
 declare interface DrawioGraphModel {
+    root: any;
     getCell(arg0: number): DrawioCell;
     setValue(c: DrawioCell, label: string | any): void;
     beginUpdate(): void;
